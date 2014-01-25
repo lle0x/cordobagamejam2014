@@ -1,0 +1,821 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 1</name>
+    <events>
+        <variable constant="0" name="timeout" sid="6547915139477358" static="0" type="number">0</variable>
+        <variable constant="0" name="tarjetas" sid="1072180648031417" static="0" type="number">0</variable>
+        <variable constant="0" name="spawn" sid="7852608722021861" static="0" type="number">2</variable>
+        <variable constant="0" name="tarjetay" sid="52985522192575" static="0" type="number">0</variable>
+        <variable constant="0" name="tarjetax" sid="6425048880601898" static="0" type="number">0</variable>
+        <event-block sid="9215904226910429">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="4780064199131298" type="System" />
+                <condition id="7" inverted="1" name="Cursor is over object" sid="2466420285938665" type="Mouse">
+                    <param id="0" name="Object">Sprite</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-22" name="Set angle toward position" sid="8358782643079288" type="Sprite">
+                    <param id="0" name="X">Mouse.X</param>
+                    <param id="1" name="Y">mouse.Y</param>
+                </action>
+                <action id="-17" name="Move forward" sid="5610983612332143" type="Sprite">
+                    <param id="0" name="Distance">50</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="3733598970900335" type="Sprite">
+                    <param id="0" name="Object">Particles</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-18" name="Rotate clockwise" sid="6956096810202494" type="Sprite2">
+                    <param id="0" name="Degrees">180</param>
+                </action>
+                <action id="-22" name="Set angle toward position" sid="7630312418073937" type="Sprite2">
+                    <param id="0" name="X">Sprite.X</param>
+                    <param id="1" name="Y">Sprite.Y</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2546241009553937">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="9376851228176951" type="System">
+                    <param id="0" name="Variable">spawn</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="2336893947569644" type="System">
+                    <param id="0" name="Variable">tarjetas</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">10</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="1353541534196682" type="System">
+                    <param id="0" name="Variable">tarjetax</param>
+                    <param id="1" name="Value">random(150,1130)</param>
+                </action>
+                <action id="-9" name="Set value" sid="8308989662213272" type="System">
+                    <param id="0" name="Variable">tarjetay</param>
+                    <param id="1" name="Value">random(150,874)</param>
+                </action>
+                <action id="-3" name="Create object" sid="3432676491578241" type="System">
+                    <param id="0" name="Object to create">tarjeta</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">tarjetax</param>
+                    <param id="3" name="Y">tarjetay</param>
+                </action>
+                <action id="-3" name="Create object" sid="7532265110421883" type="System">
+                    <param id="0" name="Object to create">tarjeta</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">1280-tarjetax</param>
+                    <param id="3" name="Y">1024-tarjetay</param>
+                </action>
+                <action id="-10" name="Set value" sid="8730530982190965" type="tarjeta">
+                    <param id="0" name="Instance variable">cara1</param>
+                    <param id="1" name="Value">round(random(0,1)*10)</param>
+                </action>
+                <action id="-10" name="Set value" sid="2228835258868895" type="tarjeta">
+                    <param id="0" name="Instance variable">cara2</param>
+                    <param id="1" name="Value">round(random(0,1)*10)</param>
+                </action>
+                <action id="-10" name="Add to" sid="6743638034702148" type="System">
+                    <param id="0" name="Variable">tarjetas</param>
+                    <param id="1" name="Value">2</param>
+                </action>
+                <action id="-11" name="Subtract from" sid="155310165638895" type="System">
+                    <param id="0" name="Variable">spawn</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="8003920676368906" title="blu">
+            <sub-events>
+                <event-block sid="2922437742835799">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="8217862636042945" type="Sprite2">
+                            <param id="0" name="Object">tarjeta</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="2373670096487569" type="tarjeta">
+                            <param id="0" name="Instance variable">cara1</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="8018679804184114" type="Sprite2">
+                            <param id="0" name="Instance variable">estado</param>
+                            <param id="1" name="Value">50</param>
+                        </action>
+                        <action id="-12" name="Subtract from" sid="7698319105571859" type="Sprite2">
+                            <param id="0" name="Instance variable">vida</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-11" name="Subtract from" sid="3776005793106748" type="System">
+                            <param id="0" name="Variable">tarjetas</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="8830967801525678" type="System">
+                            <param id="0" name="Variable">spawn</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="5756911562510295" type="tarjeta" />
+                        <action id="0" name="Spawn another object" sid="7044016637255503" type="tarjeta">
+                            <param id="0" name="Object">pared</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4124881734528199">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="5754201931240723" type="Sprite2">
+                            <param id="0" name="Object">tarjeta</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="6659643118882208" type="tarjeta">
+                            <param id="0" name="Instance variable">cara1</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="3781312063412326" type="Sprite2">
+                            <param id="0" name="Instance variable">vida</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-11" name="Subtract from" sid="6573866092507699" type="System">
+                            <param id="0" name="Variable">tarjetas</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="594946754143756" type="System">
+                            <param id="0" name="Variable">spawn</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="9428993872143948" type="tarjeta" />
+                    </actions>
+                </event-block>
+                <event-block sid="2318557194652171">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="6782541977280949" type="Sprite2">
+                            <param id="0" name="Object">tarjeta</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="4200554192757856" type="tarjeta">
+                            <param id="0" name="Instance variable">cara1</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="8893598620463456" type="tarjeta">
+                            <param id="0" name="Object">pared</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="-8" name="Set angle" sid="5903556801495049" type="pared">
+                            <param id="0" name="Angle">random(45,90)</param>
+                        </action>
+                        <action id="9" name="Set scale" sid="3612268539869951" type="pared">
+                            <param id="0" name="Scale">random(0.5,1)</param>
+                        </action>
+                        <action id="-11" name="Subtract from" sid="8142293538131557" type="System">
+                            <param id="0" name="Variable">tarjetas</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="3241424739853088" type="System">
+                            <param id="0" name="Variable">spawn</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="386244600981786" type="tarjeta" />
+                    </actions>
+                </event-block>
+                <event-block sid="2673094209075978">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="9208896241089133" type="Sprite2">
+                            <param id="0" name="Object">tarjeta</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="1755970514849728" type="tarjeta">
+                            <param id="0" name="Instance variable">cara1</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">4</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="2070677213002744" type="System">
+                            <param id="0" name="Variable">spawn</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                        <action id="-11" name="Subtract from" sid="5666391264197516" type="System">
+                            <param id="0" name="Variable">tarjetas</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="4178910148464383" type="System">
+                            <param id="0" name="Variable">spawn</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="9843483393546135" type="tarjeta" />
+                    </actions>
+                </event-block>
+                <event-block sid="7929036264787602">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="2211010175415637" type="Sprite2">
+                            <param id="0" name="Object">tarjeta</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="7378939358708516" type="tarjeta">
+                            <param id="0" name="Instance variable">cara1</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">5</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="1337413520035518" type="Sprite2">
+                            <param id="0" name="Instance variable">estado</param>
+                            <param id="1" name="Value">30</param>
+                        </action>
+                        <action id="-12" name="Subtract from" sid="9598318709125789" type="Sprite2">
+                            <param id="0" name="Instance variable">vida</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-11" name="Subtract from" sid="7296095070052243" type="System">
+                            <param id="0" name="Variable">tarjetas</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="1737583488245739" type="System">
+                            <param id="0" name="Variable">spawn</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="6504069203465642" type="tarjeta" />
+                    </actions>
+                </event-block>
+                <event-block sid="4472085396698127">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="4509176747693751" type="Sprite2">
+                            <param id="0" name="Object">tarjeta</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="3605968107925874" type="tarjeta">
+                            <param id="0" name="Instance variable">cara1</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">6</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-17" name="Move forward" sid="7168965589045908" type="Sprite2">
+                            <param id="0" name="Distance">300</param>
+                        </action>
+                        <action id="-11" name="Subtract from" sid="7683184513568003" type="System">
+                            <param id="0" name="Variable">tarjetas</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="5682178970271408" type="System">
+                            <param id="0" name="Variable">spawn</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="3642903739356563" type="tarjeta" />
+                    </actions>
+                </event-block>
+                <event-block sid="3777723611316515">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="2473064319332229" type="Sprite2">
+                            <param id="0" name="Object">tarjeta</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="3958232607126836" type="tarjeta">
+                            <param id="0" name="Instance variable">cara1</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">7</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="7211119448342884" type="Sprite2">
+                            <param id="0" name="Instance variable">veneno</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-11" name="Subtract from" sid="6951097655454855" type="System">
+                            <param id="0" name="Variable">tarjetas</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="9233839905413088" type="System">
+                            <param id="0" name="Variable">spawn</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="3297950173027276" type="tarjeta" />
+                    </actions>
+                </event-block>
+                <event-block sid="536512130340265">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="369492002152356" type="Sprite2">
+                            <param id="0" name="Object">tarjeta</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="8691981900951058" type="tarjeta">
+                            <param id="0" name="Instance variable">cara1</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">8</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Add to" sid="3159252043033238" type="Sprite2">
+                            <param id="0" name="Instance variable">vida</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="9529711924448927" type="Sprite2">
+                            <param id="0" name="Instance variable">vida</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-11" name="Subtract from" sid="4018457556499995" type="System">
+                            <param id="0" name="Variable">tarjetas</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="9128400033506136" type="System">
+                            <param id="0" name="Variable">spawn</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="4410990098873379" type="tarjeta" />
+                    </actions>
+                </event-block>
+                <event-block sid="150322429219026">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="3007348209316074" type="Sprite2">
+                            <param id="0" name="Object">tarjeta</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="5230345781913758" type="tarjeta">
+                            <param id="0" name="Instance variable">cara1</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">9</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-17" name="Move forward" sid="4062584786445817" type="Sprite2">
+                            <param id="0" name="Distance">600</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="9687684386021905" type="System">
+                            <param id="0" name="Variable">spawn</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-11" name="Subtract from" sid="9357727433717185" type="System">
+                            <param id="0" name="Variable">tarjetas</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="324301509271123" type="tarjeta" />
+                    </actions>
+                </event-block>
+                <event-block sid="7801047454522234">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="5405772871262499" type="Sprite2">
+                            <param id="0" name="Object">tarjeta</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="5342992993677282" type="tarjeta">
+                            <param id="0" name="Instance variable">cara1</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">10</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-17" name="Move forward" sid="2675571208454189" type="Sprite">
+                            <param id="0" name="Distance">140</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="4047180162876943" type="System">
+                            <param id="0" name="Variable">spawn</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-11" name="Subtract from" sid="1241239753012602" type="System">
+                            <param id="0" name="Variable">tarjetas</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="9240922667913547" type="tarjeta" />
+                        <action id="0" name="Spawn another object" sid="9269530028208446" type="Sprite">
+                            <param id="0" name="Object">Particles2</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7084556046760643">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="5800757481554368" type="Sprite2">
+                            <param id="0" name="Object">tarjeta</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="6458919230615394" type="tarjeta">
+                            <param id="0" name="Instance variable">cara1</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-17" name="Move forward" sid="493199728260458" type="tarjeta">
+                            <param id="0" name="Distance">140</param>
+                        </action>
+                        <action id="-11" name="Subtract from" sid="9799712201225537" type="System">
+                            <param id="0" name="Variable">tarjetas</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="2994193945826161" type="System">
+                            <param id="0" name="Variable">spawn</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="9651747047594056" type="tarjeta" />
+                    </actions>
+                </event-block>
+                <event-block sid="5725576921748424">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="125434804627157" type="System" />
+                        <condition id="-7" name="Compare instance variable" sid="4422185711455535" type="Sprite2">
+                            <param id="0" name="Instance variable">estado</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-17" name="Move forward" sid="5821445260249478" type="Sprite2">
+                            <param id="0" name="Distance">50</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="1887698136115245" type="Sprite2">
+                            <param id="0" name="Object">Particles3</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5651955994901052">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="4744201012916223" type="System" />
+                        <condition id="-7" name="Compare instance variable" sid="3537440106622374" type="Sprite2">
+                            <param id="0" name="Instance variable">estado</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="5227943897682388" type="Sprite2">
+                            <param id="0" name="Instance variable">estado</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9962064154380353">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="7339408709500766" type="System" />
+                        <condition id="-7" name="Compare instance variable" sid="4567152206599221" type="Sprite2">
+                            <param id="0" name="Instance variable">veneno</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="8038008507930291" type="Sprite2">
+                            <param id="0" name="Instance variable">vida</param>
+                            <param id="1" name="Value">0.001</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="839676913643857">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="7849700198788796" type="Sprite2">
+                    <param id="0" name="Instance variable">vida</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="7565599497273645" type="pared" />
+                <action id="-10" name="Set value" sid="9334626241228882" type="Sprite2">
+                    <param id="0" name="Instance variable">vida</param>
+                    <param id="1" name="Value">3</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5363276958159448">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="5114033073938687" type="System">
+                    <param id="0" name="Variable">timeout</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Value">50</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="1824476445923354" type="Text">
+                    <param id="0" name="Text">&quot;What is this?&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="3957028825266311" type="Text2">
+                    <param id="0" name="Text">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9092343085587923">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="3253351168537239" type="System">
+                    <param id="0" name="Variable">timeout</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Value">150</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="2095415072016286" type="System">
+                    <param id="0" name="Variable">timeout</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">50</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="7227399930536237" type="Text">
+                    <param id="0" name="Text">&quot;Why do you follow me?&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3296159236728251">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="8323319923700641" type="System">
+                    <param id="0" name="Variable">timeout</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Value">250</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="9516726199067733" type="System">
+                    <param id="0" name="Variable">timeout</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">150</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="4181481031383667" type="Text">
+                    <param id="0" name="Text">&quot;Where are we?&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4709124036128266">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="7352286273601297" type="System">
+                    <param id="0" name="Variable">timeout</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Value">350</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="1136578155405773" type="System">
+                    <param id="0" name="Variable">timeout</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">250</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="6269357472544645" type="Text">
+                    <param id="0" name="Text">&quot;Who are we?&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2395254661524065">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="2010717675598238" type="System">
+                    <param id="0" name="Variable">timeout</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Value">450</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="4900100916409835" type="System">
+                    <param id="0" name="Variable">timeout</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">350</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="6150273426625994" type="Text">
+                    <param id="0" name="Text">&quot;What are we doing?&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1194905288727887">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="8442802198702025" type="System">
+                    <param id="0" name="Variable">timeout</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Value">650</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="7822299608276135" type="System">
+                    <param id="0" name="Variable">timeout</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">450</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="9995892154237901" type="Text">
+                    <param id="0" name="Text">&quot;&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="9040669314520859" type="Text2">
+                    <param id="0" name="Text">&quot;... we are nothing...&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2937207699553206">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="2994067072476851" type="System">
+                    <param id="0" name="Variable">timeout</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Value">750</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="9930744548525269" type="System">
+                    <param id="0" name="Variable">timeout</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">650</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="2701519779768056" type="Text">
+                    <param id="0" name="Text">&quot;We must be something&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="9502956986660656" type="Text2">
+                    <param id="0" name="Text">&quot;Why do you think anything else?&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6129311422571608">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="1858638570646344" type="System">
+                    <param id="0" name="Variable">timeout</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Value">850</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="7574926022575158" type="System">
+                    <param id="0" name="Variable">timeout</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">750</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="6882823233082714" type="Text">
+                    <param id="0" name="Text">&quot;We are playing something&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="411316245132959" type="Text2">
+                    <param id="0" name="Text">&quot;This is not a game.&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8357971257498065">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="5144119543705448" type="System">
+                    <param id="0" name="Variable">timeout</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Value">950</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="8057192128807864" type="System">
+                    <param id="0" name="Variable">timeout</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">850</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="2188725833841194" type="Text">
+                    <param id="0" name="Text">&quot;This looks like something&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="1455193794788025" type="Text2">
+                    <param id="0" name="Text">&quot;We are just lights in a screen&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7270020959991388">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="2006831525095478" type="System">
+                    <param id="0" name="Variable">timeout</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Value">1050</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="1700134636536424" type="System">
+                    <param id="0" name="Variable">timeout</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">950</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="1442960829739851" type="Text">
+                    <param id="0" name="Text">&quot;There is stars, a cat, a mouse...&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="6665841492326121" type="Text2">
+                    <param id="0" name="Text">&quot;Nothing else?&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="57693714392905">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="4855406336441165" type="System">
+                    <param id="0" name="Variable">timeout</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Value">1150</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="9066100607132805" type="System">
+                    <param id="0" name="Variable">timeout</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">1050</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="3749465518566476" type="Text">
+                    <param id="0" name="Text">&quot;i&apos;m a cat&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="21326066747733" type="Text2">
+                    <param id="0" name="Text">&quot;or maybe you are the mouse...&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1220049859842822">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="4744272907083985" type="System">
+                    <param id="0" name="Variable">timeout</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Value">1250</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="8026917909343326" type="System">
+                    <param id="0" name="Variable">timeout</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">1150</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="389005635738474" type="Text">
+                    <param id="0" name="Text">&quot;And why we do this?&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="587841697060954" type="Text2">
+                    <param id="0" name="Text">&quot;each one will see something different, stars, animals, art, a gamme, or just fancy lights in the screen, like a movie that stops if you don&apos;t move.&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1539227695047022">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="3259577469326531" type="System">
+                    <param id="0" name="Variable">timeout</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Value">1350</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="5284985813277034" type="System">
+                    <param id="0" name="Variable">timeout</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">1250</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="3145570766019961" type="Text">
+                    <param id="0" name="Text">&quot;&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="7366078578659791" type="Text2">
+                    <param id="0" name="Text">&quot;It could be fun... or not... but you are here.&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6259270233699546">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="3065313937979197" type="System">
+                    <param id="0" name="Variable">timeout</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Value">1450</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="5558120326443502" type="System">
+                    <param id="0" name="Variable">timeout</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">1350</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="48982950863188" type="Text">
+                    <param id="0" name="Text">&quot;&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="4451609833991068" type="Text2">
+                    <param id="0" name="Text">&quot;but there is nothing else.&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4003962471819643">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="2947728125943898" type="System">
+                    <param id="0" name="Variable">timeout</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Value">1550</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="9840379033825649" type="System">
+                    <param id="0" name="Variable">timeout</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">1450</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="89779895245276" type="Text">
+                    <param id="0" name="Text">&quot;&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="254147803613663" type="Text2">
+                    <param id="0" name="Text">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2237380180766841">
+            <conditions>
+                <condition id="0" name="On clicked" sid="5683559417039891" type="GetWebcam" />
+            </conditions>
+            <actions>
+                <action id="0" name="Request camera" sid="3151529277186739" type="UserMedia" />
+            </actions>
+        </event-block>
+        <event-block sid="5894631708232313">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="7964724200935408" type="System">
+                    <param id="0" name="Interval (seconds)">0.1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="4419688910248975" type="System">
+                    <param id="0" name="Variable">timeout</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

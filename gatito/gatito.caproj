@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>gatito</name>
+    <description></description>
+    <version>1.0.0.0</version>
+    <author></author>
+    <author-email></author-email>
+    <author-website>http://</author-website>
+    <app-id>com.mycompany.myapp</app-id>
+    <unique-id>3urkabb1ok5em</unique-id>
+    <saved-with-version>14600</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Button" version="1">Button</plugin>
+        <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Particles" version="1">Particles</plugin>
+        <plugin author="Scirra" id="UserMedia" version="1">User Media</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
+        <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
+        <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
+        <behavior author="Scirra" id="Pathfinding" version="1">Pathfinding</behavior>
+    </used-behaviors>
+    <used-effects />
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>1280</width>
+        <height>1024</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">Yes</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Fullscreen scaling">High quality</prop>
+        <prop name="Loader style">Progress bar &amp; logo</prop>
+        <prop name="Orientations">Any</prop>
+        <prop name="Pause on unfocus">No</prop>
+        <prop name="Physics engine">Box2D web</prop>
+        <prop name="Preview browser">(default)</prop>
+        <prop name="Sampling">Linear</prop>
+        <prop name="Use high-DPI display">Yes</prop>
+    </configuration-settings>
+    <object-folder expanded="1">
+        <object-type name="TiledBackground" sid="4588189137643189">
+            <plugin id="TiledBg" />
+            <texture />
+        </object-type>
+        <object-type name="Sprite" sid="7615157754972963">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="estado" sid="4105038948574758" type="number" />
+                <instance-variable name="vida" sid="481485592831127" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Solid" sid="4329160847204774">
+                    <behavior id="solid" />
+                </behavior-type>
+                <behavior-type name="BoundToLayout" sid="6940893966887414">
+                    <behavior id="bound" />
+                </behavior-type>
+                <behavior-type name="8Direction" sid="2709686886905435">
+                    <behavior id="EightDir" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7967646854899563" speed="5">
+                    <frame duration="1" hotspotX="0.461538" hotspotY="0.484615">
+                        <collision-poly>
+                            <point x="0.138462" y="0.161538" />
+                            <point x="0.461538" y="0.00769231" />
+                            <point x="0.823077" y="0.123077" />
+                            <point x="0.992308" y="0.484615" />
+                            <point x="0.838462" y="0.861538" />
+                            <point x="0.461538" y="0.992308" />
+                            <point x="0.123077" y="0.823077" />
+                            <point x="0.00769231" y="0.484615" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite2" sid="8976927408936134">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="estado" sid="8812973114992672" type="number" />
+                <instance-variable name="vida" sid="7512568522617412" type="number" />
+                <instance-variable name="veneno" sid="1920568021336971" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Solid" sid="6005650759272914">
+                    <behavior id="solid" />
+                </behavior-type>
+                <behavior-type name="BoundToLayout" sid="7343783267031229">
+                    <behavior id="bound" />
+                </behavior-type>
+                <behavior-type name="8Direction" sid="187552822058607">
+                    <behavior id="EightDir" />
+                </behavior-type>
+                <behavior-type name="Pathfinding" sid="8776447971730619">
+                    <behavior id="Pathfinding" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2423924433443016" speed="5">
+                    <frame duration="1" hotspotX="0.461538" hotspotY="0.484615">
+                        <collision-poly>
+                            <point x="0.138462" y="0.161538" />
+                            <point x="0.461538" y="0.00769231" />
+                            <point x="0.823077" y="0.123077" />
+                            <point x="0.992308" y="0.484615" />
+                            <point x="0.838462" y="0.861538" />
+                            <point x="0.461538" y="0.992308" />
+                            <point x="0.123077" y="0.823077" />
+                            <point x="0.00769231" y="0.484615" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Mouse" sid="1673354097955941">
+            <plugin id="Mouse" />
+        </object-type>
+        <object-type name="tarjeta" sid="5156269653583448">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="cara1" sid="77784186094529" type="number" />
+                <instance-variable name="cara2" sid="4747826377828998" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Solid" sid="2842769276358052">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4856909240610253" speed="5">
+                    <frame duration="1" hotspotX="0.46" hotspotY="0.48" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Particles" sid="753777779099326">
+            <plugin id="Particles" />
+            <texture />
+        </object-type>
+        <object-type name="Particles2" sid="9334383220550079">
+            <plugin id="Particles" />
+            <texture />
+        </object-type>
+        <object-type name="pared" sid="7327060692126826">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="8316440772463454">
+                    <behavior id="solid" />
+                </behavior-type>
+                <behavior-type name="Sine" sid="9509333130429515">
+                    <behavior id="Sin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1868152015589042" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Particles3" sid="7605108990624126">
+            <plugin id="Particles" />
+            <texture />
+        </object-type>
+        <object-type name="Text" sid="2618257433404082">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Text2" sid="6479208424388684">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="UserMedia" sid="7893344419300778">
+            <plugin id="UserMedia" />
+        </object-type>
+        <object-type name="GetWebcam" sid="117831472089045">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="Browser" sid="2743803233210744">
+            <plugin id="Browser" />
+        </object-type>
+        <object-type name="Text3" sid="5726108411223541">
+            <plugin id="Text" />
+        </object-type>
+    </object-folder>
+    <families />
+    <layout-folder expanded="1">
+        <layout>Layout 1.xml</layout>
+    </layout-folder>
+    <event-folder expanded="1">
+        <event-sheet>Event sheet 1.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Mouse" uid="3" />
+        <global-instance type="Browser" uid="11" />
+    </global-instances>
+    <sounds-folder expanded="1" />
+    <music-folder expanded="1" />
+    <files-folder expanded="1">
+        <file-folder expanded="0" name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+    </files-folder>
+</c2project>
