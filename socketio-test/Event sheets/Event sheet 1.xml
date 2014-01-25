@@ -2,5 +2,17 @@
 <c2eventsheet>
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Event sheet 1</name>
-    <events />
+    <events>
+        <event-block sid="2052271463372376">
+            <conditions>
+                <condition id="1" name="On connect" sid="997773565188966" type="Socket" />
+            </conditions>
+            <actions>
+                <action id="0" name="Connect" sid="5039794541980903" type="Socket">
+                    <param id="0" name="Address">&quot;loukanikos.makeit.coop&quot;</param>
+                    <param id="1" name="Port">7070</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
 </c2eventsheet>
